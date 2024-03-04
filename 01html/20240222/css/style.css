@@ -1,0 +1,51 @@
+@charset "utf-8";
+html,body{height: 100%;}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+/* .imgViewer{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -152px;
+    margin-top: -218px;
+} */
+.imgViewer{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%)
+}
+.imgViewer{
+    transition:  0.3s;
+}
+.imgViewer:hover{
+    transform: translate(-50%,-50%) scale(1.2);
+    
+    
+}
+.imgViewer1{
+    overflow: hidden;
+}
+.imgViewer1 >img{
+    transition: 0.3s;
+}
+.imgViewer1> img:hover{
+    transform: scale(1.2);
+}
+/* .imgViewer1:hover > img{transform: scale(1.2);}
+.imgViewer1 >img{transition: 0.3s;} */
+.imgViewer2{
+
+}
+.imgViewer2>img{
+    transition: 0.3s;
+    
+}
+.imgViewer2>img:hover{
+    transform: translateY(-20px) rotate(5deg);
+    box-shadow: -20px 10px 20px  rgba(255,0,0,10.5);
+}

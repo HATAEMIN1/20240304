@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin: 0;padding: 0;}
+        a,a:link,a:visited{text-decoration: none;color:black}
+
+        .hWrap{
+            background-color: skyblue;
+        }
+        .hWrap > .header{
+            width: 1280px; /* 홈페이지 사이트폭 */ 
+            /* background-color: pink; */
+            margin: 0 auto; /* 가운데정렬 */ 
+            display: flex;
+            justify-content: space-between; /* 수평 분배 */ 
+            padding:20px 20px;
+        }
+        .hWrap > .header > h1 > img{
+						height: 35px;
+						display: block; /* 이미지여백제거 */ 
+				}
+        .hWrap > .header > .menu{
+            display: flex;
+        }
+        .hWrap > .header > .menu > a{
+            /* display: block; */
+            width: 100px;
+            height: 35px;
+            /* background-color: gold; */
+            display: flex; /* 정렬 */
+            justify-content: center; /* 수평가운데 */ 
+            align-items: center; /* 수직가운데 */
+            font-size:20px;
+            font-weight:bold;
+            padding:0 20px
+        }
+        .visual{
+            min-width: 1280px;
+            margin-bottom: 100px;
+        }
+        .visual>img{
+            display: block;
+            width: 100%;
+        }
+        .content{
+            width: 1280px;
+            margin: 0 auto;
+            margin-bottom: 50px;
+        }
+        .content>h2{
+            font-size: 44px;
+        }
+        .content>h2::after{
+            content: "";
+            display: block;
+            background-color: orange;
+            width: 100px;
+            height: 5px;
+            margin-top: 20px;
+        }
+        .content>p{
+            color: #555;
+            width: 50%;
+            margin-left: auto;
+        }
+        .section{
+            display: flex;
+            justify-content: space-between;
+            width: 1280px;
+            margin: 0 auto;
+            margin-bottom: 50px;
+        }
+        .section>.cardWrap{
+            width: 384px;
+            box-shadow: 10px 10px 30px  rgba(0,0,0,0.2);
+        }
+        .section>.cardWrap>img{
+            width: 100%;
+            display: block;
+        }
+        .section>.cardWrap>.textWrap{
+            padding: 20px 26px;
+            background-color: #eee;
+        }
+        .section>.cardWrap>.textWrap>h3{
+            margin-bottom: 8px;
+        }
+        .content01{
+            width: 1280px;
+            position: relative;
+            left:50%;
+            background-color:skyblue;
+            margin-left: -640px;
+            height: 100px;
+        }
+        .content01>p{
+            width: 50%;
+            background-color: pink;
+            position: absolute;
+            right: 0;
+            bottom: 0;
+
+        }
+        .banner{
+            width: 1280px;
+            height: 462px;
+            margin: 0 auto;
+            position: relative;
+        }
+        .banner>.textWrap{
+            width: 1100px;
+            height: 330px;
+            background-color:orange;
+            padding-left: 100px;
+            padding-top: 100px;
+            box-sizing: border-box;
+        }
+        .banner>img{
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            box-shadow: 10px 10px 30px  rgba(0,0,0,0.2);
+        }
+        .banner>.textWrap>h2{
+            margin-bottom: 30px;
+        }
+        .banner>.textWrap>h2>p{}
+    </style>
+</head>
+<body>
+    <div class="hWrap"><!-- db 100% -->
+        <div class="header"><!-- w1280 m0auto -->
+            <h1><img src="./images/logo.png" alt="재단"></h1>
+            <div class="menu">
+                <a href="#">재단소개</a>
+                <a href="#">재단활동</a>
+                <a href="#">재단소식</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="visual">
+        <img src="./images/main_visual01.jpg" alt="">
+    </div>
+
+    <div class="content">
+        <h2>문화를 만들고 인재를 키우고<br>마음을 나눕니다.</h2>
+        <p>넷마블문화재단은 문화적 가치 확산을 통해 우리 사회의 미래 경쟁력을 높여 가고자<br>다양한 공익 활동을 전개해 나가고 있습니다.</p>
+    </div>
+
+    <div class="section">
+        <div class="cardWrap">
+            <img src="./images/be1.jpg" alt="">
+            <div class="textWrap">
+                <h3>
+                    title
+                </h3>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, repudiandae.
+                </p>
+            </div>
+        </div>
+        <div class="cardWrap">
+            <img src="./images/be2.jpg" alt="">
+            <div class="textWrap">
+                <h3>
+                    title
+                </h3>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, repudiandae.
+                </p>
+            </div>
+        </div>
+        <div class="cardWrap">
+            <img src="./images/be3.jpg" alt="">
+            <div class="textWrap">
+                <h3>
+                    title
+                </h3>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, repudiandae.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="banner"> <!--w1280 m0auto h462-->
+        <div class="textWrap"><!--w1100 h330-->
+            <h2>우리는 문화적 가치를 확산하여 우리 사회의 <br> 미래 경쟁력을 높여갑니다</h2>
+            <p>주요목적</p>
+        </div>
+        <img src="./images/be04.jpg" alt=""><!--po b0 r0-->
+    </div>
+</body>
+</html>

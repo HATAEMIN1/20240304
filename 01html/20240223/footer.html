@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin: 0;padding: 0;box-sizing: border-box;}
+        a:link,a:visited{text-decoration: none; color: black;}
+        ul,li{list-style: none;}
+        .fWrap{
+            background-color: #171717;
+            min-width: 1280px;
+            padding: 64px 0;
+        }
+        .fWrap>.footer{
+            width: 1280px;
+            margin: 0 auto;
+        }
+        .fWrap>.footer>.innerWrap{
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .fWrap>.footer>.innerWrap>.policy>ul{
+            display: flex; gap: 10px;}
+        .fWrap>.footer>.innerWrap>.policy>ul>li{
+            color: #e1e1e1;}
+        .fWrap>.footer>.innerWrap>.policy>ul>li>a{
+            color: #e1e1e1;
+        }
+        .fWrap>.footer>.innerWrap>.sns>ul{
+            display: flex; gap: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="fWrap"><!--w100%-->
+        <div class="footer"><!--w1280 m0auto-->
+            <div class="innerWrap">
+                <div class="policy">
+                    <ul>
+                        <li><a href="#">개인정보처리방침</a></li>
+                        <li>|</li>
+                        <li><a href="#">이용동의서</a></li>
+                        <li>|</li>
+                        <li><a href="#">이메일문의</a></li>
+                        <li>|</li>
+                        <li><a href="#">주무관청</a></li>
+                        <li>|</li>
+                        <li><a href="#">국세청</a></li>
+                    </ul>
+                </div>
+                <div class="sns">
+                    <ul>
+                        <li><a href=""><img src="./images/facebook.png" alt=""></a></li>
+                        <li><a href=""><img src="./images/youtube.png" alt=""></a></li>
+                        <li><a href=""><img src="./images/instagram.png" alt=""></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin: 0;padding: 0;box-sizing: border-box;}
+        ul,li{list-style: none;}
+        a:link,a:visited{text-decoration: none;color:#333}
+
+        /* header Wrap */
+        .hWrap{
+            background-color: skyblue;
+        }
+        .hWrap > .header{
+            width: 1280px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+        }
+        .hWrap .gnbWrap{
+            width: 400px;
+            background-color: pink;
+        }
+        .hWrap .gnbMenu{
+            display: flex;
+            justify-content: space-between;
+            background-color: green;
+            height: 50px;
+        }
+        .hWrap .gnbMenu > li{
+            background-color: red;
+            width: 25%
+        }
+        .hWrap .gnbMenu > li >a {
+            background-color: indigo;display: block;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color:white;
+            transition: 0.3s;
+        }
+        .hWrap .gnbMenu > li >a:hover{
+            background-color: white;
+            color:black
+        }
+    </style>
+</head>
+<body>
+    <div class="hWrap">
+        <div class="header"><!-- w1280 -->
+            <h1>logo</h1>
+            <nav class="gnbWrap">
+                <ul class="gnbMenu">
+                    <li><a href="#">MENU1</a></li>
+                    <li><a href="#">MENU1</a></li>
+                    <li><a href="#">MENU1</a></li>
+                    <li><a href="#">MENU1</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    
+</body>
+</html>

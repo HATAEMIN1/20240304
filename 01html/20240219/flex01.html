@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        a:link{text-decoration: none;}
+        a,a:visited{color:black}
+        .headerWrap{
+            background-color: aquamarine;
+            min-width: 1280px;
+
+        }
+        .headerWrap>.header{
+            display: flex;
+            width: 1280px;
+            /* background-color: pink; */
+            margin: 0 auto;
+            justify-content: space-between;
+            padding: 20px 20px;
+        }
+        .header>h1>img{
+            height: 35px;
+            display: block;
+        }
+        .menu{
+            display:flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .menu>a{
+            width: 100px;
+            height: 35px;
+            /* background-color: gold; */
+            font-size: 20px;
+            font-weight: bold;
+            padding: 0 20px;
+        }
+        .visual>img{
+            margin-bottom: 30px;
+            display: block;
+            width: 100%;
+            min-width: 1280px
+        }
+        .section{
+            width: 1280px;
+            margin: 0 auto;
+            display : flex;
+            justify-content: space-around;
+        }
+        .section>.cardWrap{
+            width: 384px;
+        }
+        .section>.cardWrap>img{
+            width: 100%;
+            display: block;
+            width: 100%;
+        }
+        .section>.cardWrap>.textWrap{
+            padding: 28px;
+        }
+        .section>.cardWrap>.textWrap>p{
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!--header-->
+    <div class="headerWrap"><!--db 100%-->
+        <div class="header"><!-- w1280 m0auto-->
+            <h1>
+                <img src="./images/logo.png" alt="넷마블">
+            </h1>
+            <div class="menu">
+                <a href="#">재단소개</a>
+                <a href="#">재단활동</a>
+                <a href="#">재단소식</a>
+                <!-- <ul>
+                    <li><a href="#">메뉴1</a></li>
+                    <li><a href="#">메뉴2</a></li>
+                    <li><a href="#">메뉴3</a></li>
+                </ul> -->
+            </div>
+        </div>
+    </div>
+    <!--visual-->
+    <div class="visual">
+        <img src="./images/main_visual01.jpg" alt="">
+    </div>
+    <!--content-->
+    <div class="section">
+        <div class="cardWrap">
+            <img src="./images/be1.jpg" alt="">
+            <div class="textWrap">
+                <h3>문화 만들기</h3>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vel, rem.</p>
+            </div>
+        </div>
+        <div class="cardWrap">
+            <img src="./images/be2.jpg" alt="">
+            <div class="textWrap">
+                <h3>인재 키우기</h3>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vel, rem.</p>
+            </div>
+        </div>
+        <div class="cardWrap">
+            <img src="./images/be3.jpg" alt="">
+            <div class="textWrap">
+                <h3>마음 나누기</h3>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vel, rem.</p>
+            </div>
+        </div>
+    </div>
+
+
+
+</body>
+</html>

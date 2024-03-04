@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        a:link,
+        a:visited {
+            text-decoration: none;
+            color: black;
+        }
+
+        ul,
+        li {
+            list-style: none;
+        }
+
+        .container {
+            width: 1120px;
+            margin: 0 auto;
+        }
+
+        .menu {
+            display: flex;
+            gap: 10px;
+        }
+
+        .d-flex {
+            display: flex;
+            justify-content: space-between;
+        }
+        .bg-primary{
+            background-color: skyblue;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container d-flex">
+        <div class="logo">
+            logo
+        </div>
+        <ul class="menu">
+            <script>
+                const location1 = ["seoul", "daegu", "inchon", "busan"]
+                const localink = ["https://www.naver.com", "https://www.daum.net", "https://www.korea.com", "https://www.naver.com"]
+                for (let i = 0; i < location1.length; i++) {
+                    document.write("<li>");
+                    // document.write("<a href = '"+localink[i]+"'>")
+                    document.write(`<a href="${localink[i]}">`)
+                    document.write(location1[i]);
+                    document.write("</a>")
+                    document.write("</li>");
+                }
+            </script>
+        </ul>
+    </div>
+    <div class="container bg-primary" >
+        visual
+    </div>
+    <script>
+        const arr = [10,20,30,40,50]
+        function sum(){
+            let numSum = 0;
+            for(let i=0;i<arr.length;i++){
+                numSum = numSum+arr[i];
+            }
+            return numSum;
+        }
+        let num1 = sum();
+        document.write("배열의 합 : "+ num1) 
+    </script>
+</body>
+
+</html>

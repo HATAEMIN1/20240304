@@ -1,0 +1,149 @@
+.headerWrap{
+    margin: 0 auto;
+    width: 1280px;
+    background-color: aqua;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 20px;
+}
+.headerWrap>h1{
+   
+}
+.headerWrap>h1>img{
+    display: block;
+    height: 35px;
+}
+.headerWrap>.menu{
+    display: flex;
+}
+.headerWrap>.menu>a{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100px;
+    height: 35px;
+    font-size: 20px;
+    font-weight: bold;
+
+}
+.visual{
+    min-width: 1280px;
+    margin-bottom: 100px;
+}
+.visual>img{
+    display: block;
+}
+.content{
+    background-color: aquamarine;
+    margin: 0 auto;
+    width: 1280px;
+    margin-bottom: 70px;
+}
+.content>h2::after{
+    content:"";
+    background-color: orange;
+    width: 70px;
+    height: 5px;
+    display: block;
+}
+.content>p{
+    /* width: 50%;
+    margin-left: auto; */
+    
+    margin-left: 50%;
+}
+.card{
+    width: 1280px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 150px;
+}
+.card>.cardWrap{
+    width: 384px;
+    /* background-color: blue; */
+}
+
+.card>.cardWrap>img:hover{
+    transform: translateY(-20px);
+    box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.3) ;
+}
+.card>.cardWrap>img{
+    display: block;
+    transition: 0.3s;
+    
+}
+.card>.cardWrap>.textWrap{
+    padding: 15px;
+}
+.card>.cardWrap>.textWrap>h3{
+    margin-bottom: 8px;
+}
+
+.banner{
+    width: 1280px;
+    height: 462px;
+    margin: 0 auto;
+    position: relative;
+}
+.bannerText{
+    width: 1114px;
+    height: 338px;
+    padding: 102px 520px 102px 104px;
+    background-color: rgb(248, 236, 125);
+}
+.banner>img{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+
+}
+.cont{
+    background-color: aliceblue;
+    padding: 200px;
+}
+.contentLast{
+    margin: 0 auto;
+    width: 1280px;
+}
+.contentLast>.TitleLast>p{
+    font-size: 44px;
+    font-weight: 700;
+    
+}
+.contentLast>.TitleLast>p::after{
+    content: "";
+    display: block;
+    width: 70px;
+    height: 5px;
+    background-color: orange;
+    margin-bottom: 50px;
+}
+.contentLast>.cardLast{
+    width: 360px;
+    /* height: 466px; */
+    
+}
+.cardWrapLast{
+    background-color: white;
+    padding: 32px;
+    position: relative;
+    height: 466px;
+    transition: 0.3s;
+}
+.cardWrapLast:hover{
+    transform: translateY(-20px);
+    box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.3) ;;
+}
+.cardWrapLast>h3{
+    margin-bottom: 10px;
+}
+.cardWrapLast>.noti{
+    position: absolute;
+    bottom: 0;
+    
+}
+.footer{
+    height: 292px;
+    background-color: black;
+}
