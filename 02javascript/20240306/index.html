@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .btn{
+            font-size: 14px;
+            background: skyblue;
+            display: inline-block;
+            padding: 5px 10px;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+        .modal{
+            width: 100px;
+            height:100px;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="box" id="box1">
+        test1
+    </div>
+    <div class="box" id="box2">
+        test2
+    </div>
+    <div class="box">
+        test3
+    </div>
+    <div class="box">
+        test4
+    </div>
+
+    <div class="btn">변경/보이기</div>
+    <script>
+        const boxElm =  document.getElementsByClassName("box")
+        const btnElm = document.getElementsByClassName("btn")
+        const modalElm = document.getElementsByClassName("btn")
+        function changeColor(color){
+            for(let i=0;i<boxElm.length;i++)
+            boxElm[i].style.color  = color;
+        }
+        let eView = true;
+        btnElm[0].addEventListener("click",function(){
+            if(eView){
+                changeColor("red");
+                eView = false;
+            }else{
+                changeColor("black");
+                eView = true;
+            }
+        });
+    </script>
+</body>
+</html>

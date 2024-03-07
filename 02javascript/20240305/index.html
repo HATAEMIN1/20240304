@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="PrintMsg('홍길동' , 21)">학생 정보</button> 
+    <button onclick="PrintMsg('이순신' , 25)">학생 정보</button> 
+
+
+
+    <script>
+        function PrintMsg(name, age){
+            // document.write("학생 이름 : <b>"+ name + "</b><br>");
+            // document.write("학생 나이 : <b>"+ age + "</b><br>");
+            document.getElementsByClassName("name")[0].innerHTML = name;
+            document.getElementsByClassName("age")[0].innerHTML = age;
+        }
+    </script>
+    <div>
+        이름은 <span class="name">나</span> 이고, 나이는 <span class="age">0</span>세입니다.
+    </div>
+
+
+
+
+
+</body>
+</html>
