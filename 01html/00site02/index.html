@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.css"
+      integrity="sha512-rd0qOHVMOcez6pLWPVFIv7EfSdGKLt+eafXh4RO/12Fgr41hDQxfGvoi1Vy55QIVcQEujUE1LQrATCLl2Fs+ag=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <header>
+        <h1><img src="./img/logo.svg" alt=""></h1>
+        <nav>
+            <ul>
+                <li><a href="#">기업정보</a></li>
+                <li><a href="#">인재채용</a></li>
+                <li><a href="#">뉴스룸</a></li>
+                <li><a href="#">제품정보</a></li>
+                <li><a href="#">고객정보</a></li>
+            </ul>
+        </nav>
+        <div class="utilWrap">
+            <ul>
+                <li><a href="#"><i class="fa-solid fa-headphones"></i></a></li>
+                <li>|</li>
+                <li><a href="#">SNS</a></li>
+                <li>|</li>
+                <li><a href="#">KOR</a></li>
+                <li>|</li>
+                <li><a href="#"><i class="fa-solid fa-magnifying-glass"></i></a></li>
+            </ul>
+        </div>
+    </header>
+    <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide bgimage bgimg01">
+            <div class="textWrap">
+                <div class="text">
+                <h2>삼성전기 창립 50주년<br>디지털 세상의 미래를 이끌어 갑니다.</h2>
+                <p>끊임없는 혁신으로 기술의 한계를 뛰어넘어<br>전자산업 발전에 지속적으로 기여하곘습니다.</p>
+                <div class="btninfo"><a href="">자세히 보기</a></div>
+                </div>
+            </div>
+          </div>
+          <div class="swiper-slide bgimage bgimg02">
+            <div class="textWrap">
+                <div class="text">
+                <h2>16V급 세계최고용량자율주행차용 MLCC</h2>
+                <p>자율주행차 데이터네트워크의핵심인'게이트웨이'에 탑재되어<br>안정적인 전원 공급과 노이즈 제거로 안전한 운행을 보장합니다</p>
+                <div class="btninfo"><a href="">자세히 보기</a></div>
+            </div>
+            </div>
+          </div>
+          
+          <div class="swiper-slide bgimage bgimg03">
+            <div class="textWrap">
+                <div class="text">
+                <h2>업계 최초 박막형 커플드(Coipled)<br>파워인덕터 양산</h2>
+                <p>두 개의 코일을 중첩시킨 커플드(Coupled) 구조로 업계 최초의<br>박막형 커플드 파워인덕터를 개발했습니다.</p>
+                <div class="btninfo"><a href="">자세히 보기</a></div>
+            </div>
+            </div>
+          </div>
+          <div class="swiper-slide bgimage bgimg04">
+            <div class="textWrap">
+                <div class="text">
+            <h2>'폐기물 매립제로'최고 등급 획득으로<br>더 나은 내일을 만듭니다.</h2>
+            <p>폐기물 재활용 시설에 지속 투자하여 국내 전 사업장 '폐기물 매립 제로'<br>플래티넘 최고 등급을 획드했습니다.</p>
+            <div class="btninfo"><a href="">자세히 보기</a></div>
+            </div>
+            </div>
+            </div>
+        </div>
+    
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+      </div>
+      <div class="container">
+        
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+
+      <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+      <script>
+        var swiper = new Swiper(".mySwiper", {
+          navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+          },pagination: {
+          el: ".swiper-pagination",
+        },
+        autoplay: {
+          delay: 5500,
+          disableOnInteraction: false,
+        },
+        loop: true,
+        });
+      </script>
+
+</html>

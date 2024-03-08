@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .vList > li {
+        display: flex;
+        justify-content: space-between;
+      }
+    </style>
+  </head>
+  <body>
+    <input type="text" class="todo" value="" />
+    <button class="btn">오늘의 할 일</button>
+    <ul class="vList"></ul>
+    <button class="allDel">버튼 삭제</button>
+    <script>
+      const todoElm = document.getElementsByClassName("todo")[0];
+      const btnElm = document.getElementsByClassName("btn")[0];
+      const vListElm = document.getElementsByClassName("vList")[0];
+      const allDelElm = document.getElementsByClassName("allDel")[0];
+      //   const viewList = ["하태민", "홍길동", "이순신"];
+      let viewList = [];
+
+      // btnElm.addEventListener("click",function(){});
+      btnElm.addEventListener("click", function () {
+        //버튼클릭
+        // console.log(todoElm.value);
+        if (todoElm.value != "") {
+          viewList.push(todoElm.value); //vlist에 value 넣기
+          viewData();
+        }else{
+            alert("오늘 할일 입력")
+        }
+      });
+      function viewData() {
+        todoElm.value = ""; //input value 초기화
+        let textList = ""; //문자초기값
+        if (viewList.length > 0) {
+          for (let i = 0; i < viewList.length; i++) {
+            textList =
+              textList +
+              `<li><div>${viewList[i]}</div><div class='del' onclick='vListDel(${i})'>삭제</div></li>`;
+          }
+          console.log(textList);
+        }else{
+            textList = "오늘은 쉬는날"
+        }
+        vListElm.innerHTML = textList;
+      }
+      function vListDel(idx) {
+        console.log("삭제완료 : " + idx);
+        viewList.splice(idx, 1);
+        viewData();
+      }
+
+
+      allDelElm.addEventListener("click",function () {
+        viewList =[];
+        viewData();
+      })
+      viewData();
+
+
+    </script>
+  </body>
+</html>

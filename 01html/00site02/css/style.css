@@ -1,0 +1,140 @@
+@charset "utf-8";
+*{margin: 0;padding: 0;box-sizing: border-box;}
+ul,li{
+    list-style: none;
+}
+a:link,a:visited{text-decoration: none; color: black;}
+html,body{
+    height: 100%;
+}
+body{
+    font-family: "Noto Sans KR", sans-serif;
+    font-optical-sizing: auto;
+    /* font: weight 400px;; */
+    font-style: normal;
+}
+header{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 10px 15px;
+    /* background-color: purple; */
+}
+nav>ul{
+    display: flex;
+    /* background: skyblue; */
+    height: 100%;
+    
+}
+nav>ul>li>a{
+    display: block;
+    height: 100%;
+    /* background-color: brown; */
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    padding: 15px 30px;
+}
+.utilWrap>ul{
+    display: flex;
+    /* background: pink; */
+    height: 100%;
+
+    
+}
+.utilWrap>ul>li{
+    display: flex;
+    align-items: center;
+}
+.utilWrap>ul>li>a{
+    display: block;
+    height: 100%;
+    padding: 15px 15px;
+    /* background-color: yellow; */
+}
+
+
+.swiper {
+    width: 100%;
+    height: 100%;
+  }
+
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+ .swiper .bgimage.bgimg01{
+    background-image: url(../img/new_main_visual_bg01.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  .swiper .bgimage.bgimg02{
+    background-image: url(../img/new_main_visual_bg02.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  .swiper .bgimage.bgimg03{
+    background-image: url(../img/new_main_visual_bg03.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  .swiper .bgimage.bgimg04{
+    background-image: url(../img/new_main_visual_bg04.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  .cardWrap{
+    display: flex;
+    align-items: center;
+  }
+.textWrap{
+    width: 1280px;
+    display: flex;
+    align-items: center;
+    text-align: start;
+    color: white;
+}
+.text>h2{
+    font-size: 45px;
+    margin-bottom: 20px;
+}
+.text>p{
+    font-size: 17px;
+    margin-bottom: 30px;
+}
+.text>.btninfo{
+    border-color: black;
+    text-align: center;
+    width: 20%;
+    line-height: 50px;
+    height: 50px;
+    border-radius: 25px;
+    background-color: #fff;
+}
+
+
+
+
+
+
+
+
+
+
+

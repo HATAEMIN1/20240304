@@ -1,0 +1,29 @@
+
+*{margin: 0;padding: 0;box-sizing: border-box;}
+ul,li{list-style: none;}
+.banner{
+    background-image: url(/01html/20240307/img/BannerImage.png);
+    height: 100vh;
+    background-size: cover;
+}
+.nav{
+    margin: 0 auto;
+    width: 1440px;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: skyblue;
+}
+.logonav>ul{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+.infonav>ul{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap:20px;
+}
