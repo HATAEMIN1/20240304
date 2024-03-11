@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      html,
+      body {
+        height: 100%;
+      }
+      /* body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      } */
+      .box {
+        background: pink;
+        padding: 30px 0;
+      }
+      h3 {
+        width: 300px;
+        height: 100px;
+        background-color: skyblue;
+        margin: 0 auto;
+        /* margin-top: 100px; */
+
+        /* position: absolute;
+        left: 50%;
+        top: 50%; */
+        /* margin-left: calc(-300px / 2);
+        margin-top: calc(-100px / 2); */
+
+        /* transform: translateX(-50%) translateY(-50%); */
+      }
+      .box1 {
+        background-color: brown;
+        width: 300px;
+        height: 300px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .cir {
+        border-radius: 50%;
+        width: 100px;
+        height: 100px;
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: 0.3s;
+      }
+      .box1:hover .cir.circle1,
+      .box1:hover .cir.circle2 {
+        transform: translateX(0px);
+      }
+      .cir.circle1 {
+        background-color: yellow;
+        transform: translateX(-50px);
+      }
+      .cir.circle2 {
+        background-color: pink;
+        transform: translateX(50px);
+      }
+      .cir.circle3 {
+        background-color: skyblue;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- 가운데정렬 
+        display
+        block : width, height값 사용 가능
+        inline : width,height 사용 불가능
+        inline-block : width, height값 사용 가능
+        flex  : width, height값 사용 가능
+
+        margin:0 auto;
+    -->
+
+    <div class="box1">
+      <div class="cir circle1">1</div>
+      <div class="cir circle2">2</div>
+      <div class="cir circle3">3</div>
+    </div>
+  </body>
+</html>

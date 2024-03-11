@@ -1,0 +1,13 @@
+.visual{
+    background-color: skyblue;
+}
+.cardWrap .col-md-3 .card{
+    transition: 0.3s;
+}
+.card>img{
+    height: 130px;
+}
+.card:hover{
+    transform: translate(-10px ,-10px);
+    box-shadow: 10px 10px 20px rgba(0, 0,0,0.2);
+}
