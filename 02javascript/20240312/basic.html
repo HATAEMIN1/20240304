@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .box {
+        width: 100px;
+        height: 100px;
+        background-color: skyblue;
+      }
+      .box.active {
+        background-color: pink;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box"></div>
+    <button class="btn">클릭</button>
+    <button class="btn_out">제거</button>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+      integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script>
+      //   document
+      //     .getElementsByClassName("btn")[0]
+      //     .addEventListener("click", function () {
+      //       document.querySelector(".box").classList.toggle("active");
+      //     });
+      //   document
+      //     .querySelector("body>button.btn_out")
+      //     .addEventListener("click", () => {
+      //       document.querySelector(".box").classList.remove("active");
+      //     });
+
+      $(".btn").on("click", function () {
+        // $(".box").addClass("active");
+        // let attrView = $(".box").attr("class","box active");
+        // $(".box").css("background", "red");
+        console.log(attrView);
+      });
+      //   $(".btn_out").click(function () {
+      //     $("body>div.box").removeClass("active");
+      //   });
+      //   document.getElementsByClassName("box")[0].innerHTML = "홍길동";
+      //   function fn() {
+      //     return 1000;
+      //   }
+      //   let num = fn();
+      //   console.log(num);
+      let fn = (a, b) => {
+        1000 + a + b;
+      };
+
+      let num = fn(10, 1000);
+      console.log(num);
+
+      let n = 1;
+      let han = n;
+      n = 1000;
+
+      let arr = [1, 2, 3];
+      let arrCopy = [...arr];
+    </script>
+  </body>
+</html>

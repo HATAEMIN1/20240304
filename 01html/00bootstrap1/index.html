@@ -8,7 +8,14 @@
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
-
+    <!-- font-awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <!-- Bootstrap CSS v5.2.1 -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
@@ -16,12 +23,35 @@
       integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
       crossorigin="anonymous"
     />
+    <!-- magnific-popup -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css"
+      integrity="sha512-+EoPw+Fiwh6eSeRK7zwIKG2MA8i3rV/DGa3tdttQGgWyatG/SkncT53KHQaS5Jh9MNOT3dmFL0FjTY08And/Cw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- owl-carousel -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+      integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css"
+      integrity="sha512-OTcub78R3msOCtY3Tc6FzeDJ8N9qvQn1Ph49ou13xgA9VsH9+LRxoFU6EqLhW4+PKRfU+/HReXmSZXHEkpYoOA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
 
     <link rel="stylesheet" href="./css/style.css" />
   </head>
 
   <body>
-    <header>
+    <header class="fixed-top">
       <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
         <div class="container">
           <a class="navbar-brand" href="#">logo</a>
@@ -64,7 +94,7 @@
       </nav>
     </header>
     <!-- visual -->
-    <div class="visual mb-5">
+    <div class="visual mb-5 pt-5">
       <div class="container">
         <div class="row">
           <div
@@ -152,10 +182,242 @@
         </div>
       </div>
     </div>
+
+    <!-- portfolio -->
+    <div class="container cont-2st">
+      <h2>PORTFOLIO</h2>
+      <p>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laborum,
+        quidem!
+      </p>
+      <div class="btn-group mb-3">
+        <div class="btn btn-primary" data-filter="">ALL</div>
+        <div class="btn btn-primary active" data-filter=".web">WEBSITE</div>
+        <div class="btn btn-primary" data-filter=".java">JAVA</div>
+        <div class="btn btn-primary" data-filter=".node">NODE</div>
+      </div>
+      <div class="row view">
+        <div class="web col-md-3 mb-3">
+          <a href="./images/servicos/1.jpg" class="vPopup">
+            <img
+              src="./images/servicos/1.jpg"
+              alt=""
+              class="img-fluid rounded"
+            />
+          </a>
+        </div>
+        <div class="java col-md-3 mb-3">
+          <a href="./images/servicos/2.jpg" class="vPopup">
+            <img
+              src="./images/servicos/2.jpg"
+              alt=""
+              class="img-fluid rounded"
+            />
+          </a>
+        </div>
+        <div class="node col-md-3 mb-3">
+          <img src="./images/servicos/3.jpg" alt="" class="img-fluid rounded" />
+        </div>
+        <div class="node col-md-3 mb-3">
+          <img src="./images/servicos/4.jpg" alt="" class="img-fluid rounded" />
+        </div>
+        <div class="web col-md-3 mb-3">
+          <img src="./images/servicos/5.jpg" alt="" class="img-fluid rounded" />
+        </div>
+        <div class="java col-md-3 mb-3">
+          <img src="./images/servicos/6.jpg" alt="" class="img-fluid rounded" />
+        </div>
+        <div class="node col-md-3 mb-3">
+          <img src="./images/servicos/7.jpg" alt="" class="img-fluid rounded" />
+        </div>
+        <div class="node col-md-3 mb-3">
+          <img src="./images/servicos/8.jpg" alt="" class="img-fluid rounded" />
+        </div>
+        <div class="web col-md-3 mb-3">
+          <img src="./images/servicos/9.jpg" alt="" class="img-fluid rounded" />
+        </div>
+      </div>
+    </div>
+    <!-- customer -->
+    <div class="bg-gray cont-3st">
+      <div class="container pt-5">
+        <h2 class="text-center">CUSTOMER</h2>
+        <p class="text-center">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae,
+          animi.
+        </p>
+        <div class="owl-carousel" id="slide1">
+          <!-- item1 start -->
+          <div class="item p-5 d-flex gap-5 d-md-block">
+            <img src="images/user.svg" alt="" class="img-fluid mb-3" />
+            <div class="txtBody text-md-center">
+              <h3>Lorem, ipsum dolor.</h3>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. At,
+                dolores?
+              </p>
+            </div>
+          </div>
+          <!-- item1 end -->
+          <!-- item1 start -->
+          <div class="item p-5 d-flex gap-5 d-md-block">
+            <img src="images/user.svg" alt="" class="img-fluid mb-3" />
+            <div class="txtBody text-md-center">
+              <h3>Lorem, ipsum dolor.</h3>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. At,
+                dolores?
+              </p>
+            </div>
+          </div>
+          <!-- item1 end -->
+          <!-- item1 start -->
+          <div class="item p-5 d-flex gap-5 d-md-block">
+            <img src="images/user.svg" alt="" class="img-fluid mb-3" />
+            <div class="txtBody text-md-center">
+              <h3>Lorem, ipsum dolor.</h3>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. At,
+                dolores?
+              </p>
+            </div>
+          </div>
+          <!-- item1 end -->
+          <!-- item1 start -->
+          <div class="item p-5 d-flex gap-5 d-md-block">
+            <img src="images/user.svg" alt="" class="img-fluid mb-3" />
+            <div class="txtBody text-md-center">
+              <h3>Lorem, ipsum dolor.</h3>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. At,
+                dolores?
+              </p>
+            </div>
+          </div>
+          <!-- item1 end -->
+          <!-- item1 start -->
+          <div class="item p-5 d-flex gap-5 d-md-block">
+            <img src="images/user.svg" alt="" class="img-fluid mb-3" />
+            <div class="txtBody text-md-center">
+              <h3>Lorem, ipsum dolor.</h3>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. At,
+                dolores?
+              </p>
+            </div>
+          </div>
+          <!-- item1 end -->
+        </div>
+      </div>
+    </div>
+    <!-- online -->
+    <div class="container py-5">
+      <div class="row">
+        <div
+          class="offset-0 offset-md-3 col-md-6 bg-primary text-center py-5 bg-light"
+        >
+          <h3>Lorem ipsum dolor sit amet.</h3>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta
+            aspernatur vitae expedita. Expedita itaque quos laudantium quia cum
+            non numquam eum molestias voluptates reiciendis deserunt minus
+            nostrum nam, quis cupiditate!
+          </p>
+          <div class="btn btn-primary">click</div>
+        </div>
+      </div>
+    </div>
+    <footer class="bg-dark py-5 text-white">
+      <div class="container">
+        <div class="row px-5 px-md-0">
+          <div class="col-6 col-md">
+            <h4>COMPANY</h4>
+            <ul>
+              <li>menu1</li>
+              <li>menu2</li>
+              <li>menu3</li>
+              <li>menu4</li>
+            </ul>
+          </div>
+          <div class="col-6 col-md">
+            <h4>COMPANY</h4>
+            <ul>
+              <li>menu1</li>
+              <li>menu2</li>
+              <li>menu3</li>
+              <li>menu4</li>
+            </ul>
+          </div>
+          <div class="col-6 col-md">
+            <h4>COMPANY</h4>
+            <ul>
+              <li>menu1</li>
+              <li>menu2</li>
+              <li>menu3</li>
+              <li>menu4</li>
+            </ul>
+          </div>
+          <div class="col-6 col-md">
+            <h4>COMPANY</h4>
+            <ul>
+              <li>menu1</li>
+              <li>menu2</li>
+              <li>menu3</li>
+              <li>menu4</li>
+            </ul>
+          </div>
+          <div class="col-6 col-md">
+            <h4>COMPANY</h4>
+            <ul>
+              <li>menu1</li>
+              <li>menu2</li>
+              <li>menu3</li>
+              <li>menu4</li>
+            </ul>
+          </div>
+        </div>
+        <!--/row-->
+        <hr />
+        <div class="row">
+          <div class="col-md-6">
+            <ul
+              class="d-flex gap-2 justify-content-center justify-content-md-start"
+            >
+              <li>Privacy</li>
+              <li>/</li>
+              <li>Teams</li>
+              <li>/</li>
+              <li>Site Map</li>
+            </ul>
+          </div>
+          <div class="col-md-6">
+            <ul
+              class="d-flex gap-3 justify-content-center justify-content-md-end"
+            >
+              <li><i class="fa-brands fa-facebook"></i></li>
+              <li><i class="fa-brands fa-github"></i></li>
+              <li><i class="fa-brands fa-twitter"></i></li>
+            </ul>
+          </div>
+        </div>
+        <!--/row-->
+        <div class="row">
+          <div class="small text-center">
+            <p>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+              Voluptatibus, rem? Quasi veritatis dicta repellat amet.
+            </p>
+          </div>
+        </div>
+      </div>
+      <!--/container-->
+    </footer>
+
     <main></main>
     <footer>
       <!-- place footer here -->
     </footer>
+
     <!-- Bootstrap JavaScript Libraries -->
     <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
@@ -168,5 +430,59 @@
       integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
       crossorigin="anonymous"
     ></script>
+
+    <!-- jquery -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+      integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <!-- isotope -->
+    <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+    <!-- magnific-popup -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"
+      integrity="sha512-IsNh5E3eYy3tr/JiX2Yx4vsCujtkhwl7SLqgnwLNgf04Hrt9BT9SXlLlZlWx+OK4ndzAoALhsMNcCmkggjZB1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <!-- owlCarousel -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
+      integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script>
+      $(".cont-2st .btn-group div").click(function () {
+        // alert("test" + $(this).index());
+        $(".cont-2st .btn-group div").removeClass("active");
+        $(this).addClass("active");
+        let selector = $(this).attr("data-filter");
+        $(".cont-2st .view").isotope({ filter: selector });
+      });
+      window.addEventListener("load", function () {
+        $(".cont-2st .btn-group div").eq(0).trigger("click");
+      });
+      $(".view .vPopup").magnificPopup({
+        type: "image",
+        gallery: {
+          enabled: false,
+        },
+      });
+
+      $("#slide1").owlCarousel({
+        loop: true,
+        // autoplay: true,
+        dot: true,
+        nav: true,
+        responsive: {
+          0: { items: 1 },
+          760: { items: 2 },
+          990: { items: 3 },
+        },
+      });
+    </script>
   </body>
 </html>
