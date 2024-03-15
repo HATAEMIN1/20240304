@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="./css/style.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
@@ -12,74 +11,106 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <link rel="stylesheet" href="./css/style.css" />
   </head>
   <body>
     <div class="inpWrap">
       <input type="text" class="inp" />
-      <button class="btn1">오늘의 할 일</button>
+      <button class="btn1">오늘의 할일</button>
     </div>
     <ul class="viewData">
-      <!-- <li>
-        <div class="viewList">
-          자바스크립트
-          <div class="iconWrap">
-            <a href="#"><i class="fa-solid fa-square-check"></i></a>
-            <a href="#"><i class="fa-solid fa-square"></i></a>
-            <a href="#"><i class="fa-solid fa-trash"></i></a>
-          </div>
+      <!-- <li class="viewList">
+        <div class="txt">자바스크립트</div>
+        <div class="iconWrap">
+          <a href="#"><i class="fa-solid fa-check"></i></a>
+          <a href="#"><i class="fa-solid fa-trash"></i></a>
         </div>
       </li> -->
     </ul>
+
     <script>
+      // CRUD
+      // 1. 디자인완료( 테스트 화면 )
+      // 2. 입력창에 자료입력 -> 버튼 클릭 -> 입력창 글씨삭제
+      // 3. 자료입력안됨 -> 버튼클릭 -> 에러메세지(자료입력하세요)
+      // 4. 데이터 푸쉬( listData = []) (localstorage 같이)
+      // 5. listData = [] / localstorage 자료 출력
+      // 6. 수정이벤트 제작
+      // 7. 삭제이벤트 제작
+
+      let viewElm = document.querySelector(".viewData");
+      //   document.querySelectorAll("body > div.viewData")[0]
+      //   document.getElementsByClassName("viewData")[0]
+
       let btnElm = document.querySelector(".btn1");
       let inpElm = document.querySelector(".inp");
-      let viewElm = document.querySelector(".viewData");
+
       let listData = [];
 
       btnElm.addEventListener("click", function () {
         if (inpElm.value != "") {
+          console.log(inpElm.value);
           let value = { title: inpElm.value, check: false };
           listData.push(value);
-          //localStroge JSON형태로 저장
+
+          //localstorage에 json data update
           let valueData = JSON.stringify(listData);
+          console.log(valueData);
           localStorage.setItem("todoData", valueData);
+
           view();
+          inpElm.value = ""; // input창 초기화
         } else {
-          alert("자료를 입력하세요");
+          alert("오늘의 할일을 입력하세요"); //오류
+          inpElm.focus();
         }
-        inpElm.value = "";
-        console.log(listData);
       });
 
       function view() {
-        //localStroge에 있는 데이터를 가져옴
         if (localStorage.length > 0) {
           let localData = localStorage.getItem("todoData");
+          console.log(JSON.parse(localData));
           listData = JSON.parse(localData);
         }
+
         text = "";
         for (let i = 0; i < listData.length; i++) {
-          text += `<li>`;
           if (listData[i].check) {
-            text += `<div class="viewList active">`;
+            text += '<li class="viewList active">';
           } else {
-            text += `<div class="viewList">`;
+            text += '<li class="viewList">';
           }
-          text += `  ${listData[i].title}`;
-          text += ` <div class="iconWrap">`;
+
+          text += '    <div class="txt">' + listData[i].title + "</div>";
+          text += '    <div class="iconWrap">';
+
           if (listData[i].check) {
-            text += ` <a href="#" onclick="check(${i})"><i class="fa-regular fa-square-check"></i></a>`;
+            //check true일때
+            text +=
+              '    <a href="#" onclick="check(' +
+              i +
+              ')"><i class="fa-regular fa-square-check"></i></a>';
           } else {
-            text += `<a href="#"onclick="check(${i})"><i class="fa-regular fa-square"></i></a>`;
+            //check false 일때
+            text +=
+              '    <a href="#" onclick="check(' +
+              i +
+              ')"><i class="fa-regular fa-square"></i></a>';
           }
-          text += ` <a href="#" onclick="del(${i})"><i class="fa-solid fa-trash"></i></a>`;
-          text += ` </div>`;
-          text += ` </div>`;
-          text += `</li>`;
+
+          // text += `    <a href="#" onclick="del(${i})"><i class="fa-solid fa-trash"></i></a>`;
+          text +=
+            '    <a href="#" onclick="del(' +
+            i +
+            ')"><i class="fa-solid fa-trash"></i></a>';
+          text += "    </div>";
+          text += "</li>";
         }
+
         viewElm.innerHTML = text;
       }
       view();
+
       function del(idx) {
         listData.splice(idx, 1);
 
@@ -90,8 +121,10 @@
         //다시리스트호출
         view();
       }
+
       function check(idx) {
         listData[idx].check = !listData[idx].check;
+
         //localstorage에 json data 수정업데이트
         let valueData = JSON.stringify(listData);
         localStorage.setItem("todoData", valueData);

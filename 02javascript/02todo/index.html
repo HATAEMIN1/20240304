@@ -20,35 +20,67 @@
     </div>
     <ul class="viewData"></ul>
     <script>
-      const inpElm = document.querySelector(".inp");
+      let inpElm = document.querySelector(".inp");
       let viewElm = document.querySelector(".viewData");
-      let listData = [
-        { title: "스크립트", check: false },
-        { title: "자바", check: false },
-        { title: "앱기획", check: true },
-        { title: "node", check: false },
-      ];
-      function inputData() {}
+      let btnElm = document.querySelector(".btn1");
+      let listData = [];
 
-      text = "";
-      for (let i = 0; i < listData.length; i++) {
-        if (listData[i].check) {
-          text += '<li class="viewList active">';
+      btnElm.addEventListener("click", function () {
+        if (inpElm.value != "") {
+          let value = { title: inpElm.value, check: false };
+          listData.push(value);
+          //localStroage에 json으로 변환해서 넣어야함
+          let valueData = JSON.stringify(listData);
+
+          localStorage.setItem("todoData", valueData);
+
+          view();
+          inpElm.value = "";
         } else {
-          text += '<li class="viewList">';
+          alert("오늘의 할일을입력하세요");
         }
-        text += '<div class="txt">자바스크립트</div>';
-        text += '<div class="iconWrap">';
-        if (listData[i].check) {
-          text += '<a href="#"><i class="fa-regular fa-square-check"></i></a>';
-        } else {
-          text += '<a href="#"><i class="fa-regular fa-square"></i></i></a>';
+      });
+
+      function view() {
+        if (localStorage.length > 0) {
+          let localData = localStorage.getItem("todoData");
+          listData = JSON.parse(localData);
         }
-        text += '<a href="#"><i class="fa-solid fa-trash"></i></a>';
-        text += "</div>";
-        text += "</li>";
+
+        text = "";
+        for (let i = 0; i < listData.length; i++) {
+          console.log(listData[i].check);
+          if (listData[i].check) {
+            text += '<li class="viewList active">';
+          } else {
+            text += '<li class="viewList">';
+          }
+          text += `<div class="txt">${listData[i].title}</div>`;
+          text += '<div class="iconWrap">';
+          if (listData[i].check) {
+            text += `<a href="#" onclick="check(${i})"><i class="fa-regular fa-square-check"></i></a>`;
+          } else {
+            text += `<a href="#" onclick = "check(${i})"><i class="fa-regular fa-square"></i></i></a>`;
+          }
+          text += `<a href="#" onclick="del(${i})"><i class="fa-solid fa-trash"></i></a>`;
+          text += "</div>";
+          text += "</li>";
+        }
+        viewElm.innerHTML = text;
       }
-      viewElm.innerHTML = text;
+      view();
+      function del(idx) {
+        listData.splice(idx, 1);
+        let valueData = JSON.stringify(listData);
+        localStorage.setItem("todoData", valueData);
+        view();
+      }
+      function check(idx) {
+        listData[idx].check = !listData[idx].check;
+        let valueData = JSON.stringify(listData);
+        localStorage.setItem("todoData", valueData);
+        view();
+      }
     </script>
   </body>
 </html>

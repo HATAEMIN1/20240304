@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //   let myCalc = new Promise(function (resolve, reject) {
+      //     setTimeout(function () {
+      //       3000;
+      //       reject();
+      //     }, 3000);
+      //   });
+      //   myCalc
+      //     .then(function (num) {
+      //       console.log("성공입니다" + num);
+      //     })
+      //     .catch(function (num) {
+      //       console.log("실패임" + num);
+      //     });
+
+      //   function fn(nae) {}
+
+      //   async function fn() {
+      //     return Promise.reject();
+      //   }
+      //   fn()
+      //     .then(function (num) {
+      //       console.log("안녕하세요!" + num);
+      //     })
+      //     .catch(function () {
+      //       console.log("실패");
+      //     });
+
+      async function fn1() {
+        let myfn = new Promise(function (resolve, reject) {
+          reject(100);
+        });
+        try {
+          let result = await myfn;
+          console.log(result);
+        } catch (error) {
+          console.log("실패");
+        }
+
+        console.log("실행완료");
+        // myfn
+        //   .then(function (num) {
+        //     console.log("성공" + num);
+        //   })
+        //   .catch(function () {});
+      }
+      fn1();
+    </script>
+  </body>
+</html>
