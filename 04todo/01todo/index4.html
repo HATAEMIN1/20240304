@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./css/style2.css" />
+  </head>
+  <body>
+    <div class="inputWrap">
+      <input type="text" class="inp" />
+      <button class="btn1">오늘의 할 일</button>
+    </div>
+    <div class="viewWrap">
+      <ul class="view">
+        <!-- <li class="viewList">
+          <div>오늘할일</div>
+          <div class="iconWrap">
+            <a href="#"><i class="fa-regular fa-square-check"></i></a>
+            <a href="#"><i class="fa-regular fa-square"></i></a>
+            <a href="#"><i class="fa-solid fa-trash"></i></a>
+          </div>
+        </li> -->
+      </ul>
+    </div>
+    <script>
+      let inpElm = document.querySelector(".inp");
+      let btnElm = document.querySelector(".btn1");
+      let ulElm = document.querySelector(".view");
+      let viewElm = document.querySelector(".viewList");
+      let viewData = [];
+      btnElm.addEventListener("click", function () {
+        event1();
+      });
+      inpElm.addEventListener("keypress", function (event) {
+        if (event.type === "keypress" && event.which === 13) {
+          event1();
+        }
+      });
+
+      function event1() {
+        if (inpElm.value.trim() != "") {
+          let value = { title: inpElm.value, check: false };
+          viewData.push(value);
+          let strogeValue = JSON.stringify(viewData);
+          localStorage.setItem("todo4", strogeValue);
+          view();
+          inpElm.value = "";
+        } else {
+          alert("빈칸 입력 x");
+        }
+      }
+      function view() {
+        if (localStorage.length > 0) {
+          let localData = localStorage.getItem("todo4");
+          viewData = JSON.parse(localData);
+        }
+        text = "";
+        for (let i = 0; i < viewData.length; i++) {
+          text += ` <li class="viewList">`;
+          text += `<div>${viewData[i].title}</div>`;
+          text += `<div class="iconWrap">`;
+          if (viewData[i].check != false) {
+            text += `<a href="#" onclick="check(${i})"><i class="fa-regular fa-square-check"></i></a>`;
+          } else {
+            text += `<a href="#" onclick="check(${i})"><i class="fa-regular fa-square"></i></a>`;
+          }
+
+          text += ` <a href="#" onclick = "del(${i})"><i class="fa-solid fa-trash"></i></a>`;
+          text += ` </div>`;
+          text += `</li>`;
+        }
+        ulElm.innerHTML = text;
+      }
+      view();
+      function check(index) {
+        viewData[index].check = !viewData[index].check;
+        let strogeValue = JSON.stringify(viewData);
+        localStorage.setItem("todo4", strogeValue);
+        view();
+      }
+      function del(index) {
+        viewData.splice(index, 1);
+        let strogeValue = JSON.stringify(viewData);
+        localStorage.setItem("todo4", strogeValue);
+        view();
+      }
+    </script>
+  </body>
+</html>

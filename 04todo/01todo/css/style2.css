@@ -1,0 +1,37 @@
+*{margin: 0 ;padding: 0;box-sizing: border-box;}
+ul,li{
+    list-style: none;
+}
+
+
+.inputWrap{
+    margin: 0 auto;
+    width:400px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    
+}
+.inp{
+    width: 500px;
+}
+.viewWrap{
+    margin: 0 auto;
+    width:400px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+  
+}
+.view{
+    width: 400px;
+    margin: 0 auto;  
+}
+.view .viewList{
+    display: flex;
+    justify-content: space-between;
+}
+.iconWrap{
+    display: flex;
+    gap: 5px;
+}
