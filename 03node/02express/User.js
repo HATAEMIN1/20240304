@@ -4,16 +4,16 @@ const UserSchema = mongoose.Schema(
   {
     username: {
       type: String,
-      require: true,
+      required: true,
     },
     name: {
       first: {
         type: String,
-        require: true,
+        required: true,
       },
       last: {
         type: String,
-        require: true,
+        required: true,
       },
       age: Number,
       email: String,
@@ -21,5 +21,5 @@ const UserSchema = mongoose.Schema(
   },
   { timestamps: true }
 );
-const User = mongoose.model("uesr", UserSchema);
+const User = mongoose.model("user", UserSchema);
 module.exports = { User };
