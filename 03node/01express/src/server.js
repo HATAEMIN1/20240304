@@ -1,12 +1,13 @@
 const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
+const dotenv = require("dotenv");
+
 const { User } = require("./model/User.js");
 
 const users = [];
-
-const MONGO_URL =
-  "mongodb+srv://gkxoals33:0lUDwiTsPmcWsDG5@mongodb0.3ej5iia.mongodb.net/book?retryWrites=true&w=majority&appName=mongodb0";
+dotenv.config;
+//process.env.MONGO_URL
 
 // let result = mongoose.connect(MONGO_URL);
 // console.log(result);
@@ -17,7 +18,7 @@ const MONGO_URL =
 
 const server = async function () {
   try {
-    await mongoose.connect(MONGO_URL);
+    await mongoose.connect(process.env.MONGO_URL);
     app.use(express.json()); ///제이슨으로 변경하는 미들웨어
 
     app.get("/user", async function (req, res) {
