@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      ul,
+      li {
+        list-style: none;
+      }
+      .wrap {
+        width: 400px;
+      }
+      .tabmenu {
+        display: flex;
+      }
+      .tabmenu .active {
+        background-color: skyblue;
+      }
+      .tabmenu li {
+        padding: 10px 20px;
+        background-color: #eee;
+      }
+      .content div {
+        display: none;
+        padding: 20px;
+      }
+      .content div:nth-child(1) {
+        display: block;
+      }
+      .imgView {
+        overflow: hidden;
+      }
+      .imgWrap {
+        display: flex;
+        position: relative;
+        left: 0px;
+      }
+      .imgWrap img {
+        width: 400px;
+        position: relative;
+      }
+      .box {
+        position: absolute;
+        background-color: pink;
+        height: 100%;
+        width: 400px;
+        top: 0;
+        left: -100%;
+        z-index: 100;
+        transition: 0.3s;
+      }
+      .shadow {
+        display: none;
+        position: fixed;
+        background-color: black;
+        width: 100%;
+        height: 100%;
+        opacity: 0.3;
+        top: 0;
+      }
+      .menu {
+        position: relative;
+        z-index: 99;
+      }
+    </style>
+  </head>
+  <body>
+    <button class="menu">클릭</button>
+    <div class="box">
+      <button class="close">닫기</button>
+      <ul>
+        <li>menu1</li>
+        <li>menu2</li>
+        <li>menu3</li>
+        <li>menu4</li>
+        <li>menu5</li>
+      </ul>
+    </div>
+    <div class="shadow"></div>
+    <div class="wrap">
+      <ul class="tabmenu">
+        <li class="active">tab1</li>
+        <li>tab2</li>
+        <li>tab3</li>
+      </ul>
+      <div class="content">
+        <div>
+          1.Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quae rem
+          ut esse ullam vel ea sint, exercitationem provident dolorem alias?
+        </div>
+        <div>
+          2.Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quae rem
+          ut esse ullam vel ea sint, exercitationem provident dolorem alias?
+        </div>
+        <div>
+          3.Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quae rem
+          ut esse ullam vel ea sint, exercitationem provident dolorem alias?
+        </div>
+      </div>
+      <div class="imgView">
+        <div class="imgWrap">
+          <img src="./img/images (1)/img1.jpg" alt="" class="img" />
+          <img src="./img/images (1)/img2.jpg" alt="" class="img" />
+          <img src="./img/images (1)/img3.jpg" alt="" class="img" />
+        </div>
+      </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <script>
+      $(".tabmenu>li").click(function () {
+        $(".tabmenu>li").removeClass("active");
+        $(this).addClass("active");
+        $(".content>div").css("display", "none");
+        $(".content>div").eq($(this).index()).css("display", "block");
+        $(".imgWrap").css("left", -400 * $(this).index());
+      });
+      $(".menu").click(function () {
+        $(".box").css({ left: 0 });
+        $(".shadow").show();
+      });
+      $(".close").click(function () {
+        $(".box").css({ left: -100 + "%" });
+        $(".shadow").hide();
+      });
+    </script>
+  </body>
+</html>

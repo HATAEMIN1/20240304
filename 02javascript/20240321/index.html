@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      ul,
+      li {
+        list-style: none;
+      }
+      .wrap {
+        width: 400px;
+      }
+      .tabmenu {
+        display: flex;
+      }
+      .tabmenu li {
+        padding: 10px 20px;
+        background-color: #eee;
+        cursor: pointer;
+      }
+      .tabmenu li.active {
+        background: skyblue;
+      }
+      .content div {
+        display: none;
+        padding: 20px;
+      }
+      .content div:nth-child(1) {
+        display: block;
+      }
+      .imgView {
+        overflow: hidden;
+      }
+      .imgWrap {
+        display: flex;
+        position: relative;
+        left: 0px;
+        transition: 0.3s;
+      }
+      .imgWrap img {
+        width: 400px;
+        position: relative;
+      }
+      .box {
+        position: absolute;
+        background-color: pink;
+        width: 400px;
+        height: 100%;
+        top: 0;
+        left: -100%;
+        z-index: 100;
+        transition: 0.3s;
+      }
+      .shadow {
+        display: none;
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        background-color: #000;
+        z-index: 98;
+        opacity: 0.3;
+        top: 0;
+      }
+      .menu {
+        position: relative;
+        z-index: 99;
+      }
+    </style>
+  </head>
+  <body>
+    <button class="menu">클릭</button>
+    <div class="box">
+      <button class="close">닫기</button>
+      <ul>
+        <li>menu1</li>
+        <li>menu2</li>
+        <li>menu3</li>
+        <li>menu4</li>
+        <li>menu5</li>
+      </ul>
+    </div>
+    <div class="shadow"></div>
+    <div class="wrap">
+      <ul class="tabmenu">
+        <li class="active">tab1</li>
+        <li>tab2</li>
+        <li>tab3</li>
+      </ul>
+      <div class="content">
+        <div>
+          1. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illum
+          est, vel minima dolor repudiandae perferendis ea alias modi fugit a
+          fuga dolorem obcaecati suscipit nihil id unde libero quod dolores?
+        </div>
+        <div>
+          2. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illum
+          est, vel minima dolor repudiandae perferendis ea alias modi fugit a
+          fuga dolorem obcaecati suscipit nihil id unde libero quod dolores?
+        </div>
+        <div>
+          3. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illum
+          est, vel minima dolor repudiandae perferendis ea alias modi fugit a
+          fuga dolorem obcaecati suscipit nihil id unde libero quod dolores?
+        </div>
+      </div>
+      <div class="imgView">
+        <div class="imgWrap">
+          <img src="./img/images (1)/img1.jpg" alt="" class="img" />
+          <img src="./img/images (1)/img2.jpg" alt="" class="img" />
+          <img src="./img/images (1)/img3.jpg" alt="" class="img" />
+        </div>
+      </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+      $(".tabmenu>li").click(function () {
+        console.log($(this).index());
+        $(".tabmenu>li").removeClass("active");
+        $(this).addClass("active");
+        $(".content>div").css("display", "none");
+        $(".content>div").eq($(this).index()).css("display", "block");
+        // $(".imgWrap").css("left", -400 * $(this).index());
+        // document.querySelector(".imgWrap").style.left =
+        //   -400 * $(this).index() + "px";
+        $(".imgWrap")
+          .stop()
+          .animate({ left: -400 * $(this).index() }, 100);
+      });
+      $(".menu").click(function () {
+        $(".box").css({ left: 0 });
+        $(".shadow").show();
+      });
+      $(".close").click(function () {
+        $(".box").css({ left: -100 + "%" });
+        $(".shadow").hide();
+      });
+    </script>
+  </body>
+</html>
