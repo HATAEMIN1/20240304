@@ -1,6 +1,5 @@
 const { Schema, Types, model } = require("mongoose");
-
-const BlogSchema = new Schema(
+const BlogSchema = Schema(
   {
     title: { type: String, required: true },
     content: { type: String, required: true },
