@@ -3,19 +3,10 @@ const app = express();
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 const { userRouter } = require("./route/userRouter.js");
-const { blogRouter } = require("./route/blogRouer.js");
+const { blogRouter } = require("./route/blogRouter.js");
 
 const users = [];
 dotenv.config();
-//process.env.MONGO_URL
-
-// let result = mongoose.connect(MONGO_URL);
-// console.log(result);
-
-// mongoose.connect(MONGO_URL).then(function (result) {
-//   return console.log(result);
-// });
-
 const server = async function () {
   try {
     await mongoose.connect(process.env.MONGO_URL);
