@@ -4,6 +4,7 @@ const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 const { userRouter } = require("../src/routes/userRouter.js");
 const { blogRouter } = require("./routes/blogRouter.js");
+const { commentRouter } = require("./routes/commentRouter.js");
 dotenv.config();
 
 const server = async function () {
@@ -13,6 +14,7 @@ const server = async function () {
     app.use(express.json());
     app.use("/user", userRouter);
     app.use("/blog", blogRouter);
+    app.use("/blog/:blogId/comment", commentRouter);
     app.listen(3000);
   } catch (error) {
     console.log("연결안됨");
