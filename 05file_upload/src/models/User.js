@@ -6,10 +6,12 @@ const UserSchema = mongoose.Schema(
     useremail: { type: String, required: true, unique: true },
     password: { type: String, minLength: 5, required: true },
     role: { type: Number, required: true, default: 0 },
-    image: {
-      filename: { type: String, default: "noimage.jpg" },
-      originalname: { type: String, default: "noimage.jpg" },
-    },
+    image: [
+      {
+        filename: { type: String, default: "noimage.jpg" },
+        originalname: { type: String, default: "noimage.jpg" },
+      },
+    ],
   },
   { timestamps: true }
 );

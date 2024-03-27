@@ -35,11 +35,33 @@ userRouter.post("/login", async function (req, res) {
         .send({ error: "입력하신 정보가 올바르지 않습니다." });
     }
     console.log(isValid);
-    return res.send({ message: "로그인 되었습니다.", email: user.email });
+    return res.send({ message: "로그인 되었습니다.", email: user.useremail });
 
-    return res.send(req.body);
+    // return res.send(req.body);
   } catch (error) {
     return res.status(500).send({ error: error.message });
   }
 });
+
+userRouter.put(
+  "/reg_modi/:userId",
+  upload.single("avatar"),
+  async function (req, res) {
+    try {
+      const { userId } = req.params;
+      const { username } = req.body;
+      const { filename, originalname } = req.file;
+      const image = [{ filename, originalname }];
+      const update = await User.findOneAndUpdate(
+        { _id: userId },
+        { username, image },
+        { new: true }
+      );
+      return res.send({ update });
+    } catch (error) {
+      return res.status(500).send({ error: error.message });
+    }
+  }
+);
+
 module.exports = { userRouter };

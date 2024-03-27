@@ -12,14 +12,15 @@ userImage.post("/", upload.single("image"), async function (req, res) {
     //   return res.status(400).send({ error: "No file uploaded." });
     // }
     const { originalname, filename } = req.file;
+    const image = [{ originalname, filename }];
     console.log(req.file);
     console.log(req.file.originalname);
     console.log(req.file.filename);
-    const image = await new User({
+    const images = await new User({
       ...req.body,
-      ...req.file,
+      image,
     }).save();
-    return res.send({ image });
+    return res.send({ images });
   } catch (error) {
     res.status(500).send({ error: error.message });
   }
@@ -33,6 +34,13 @@ userImage.put(
       const { userImageid } = req.params;
       const { username, useremail, password, role } = req.body;
       const { originalname, filename } = req.file;
+      const image = [{ originalname, filename }];
+      const update = await User.findOneAndUpdate(
+        { _id: userImageid },
+        { username, image },
+        { new: true }
+      );
+      return res.send({ update });
     } catch (error) {
       res.status(500).send({ error: error.message });
     }
