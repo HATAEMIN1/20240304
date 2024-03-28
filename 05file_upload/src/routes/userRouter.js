@@ -4,21 +4,39 @@ const { User } = require("../models/User");
 // const { Image } = require("../models/Image");
 const { upload } = require("../middlewares/imageUpload");
 const userImage = Router();
+const { hash } = require("bcryptjs");
 
-userImage.post("/", upload.single("image"), async function (req, res) {
+userImage.post("/", upload.array("image", 3), async function (req, res) {
   try {
-    const { username, useremail, password } = req.body;
+    const imagess = [];
+    const password = await hash(req.body.password, 10);
+
+    //single
     // if (!req.file) {
     //   return res.status(400).send({ error: "No file uploaded." });
     // }
-    const { originalname, filename } = req.file;
-    const image = [{ originalname, filename }];
-    console.log(req.file);
-    console.log(req.file.originalname);
-    console.log(req.file.filename);
+    // const { originalname, filename } = req.file;
+    // const image = [{ originalname, filename }];
+    // console.log(req.file);
+    // console.log(req.file.originalname);
+    // console.log(req.file.filename);
+    // const images = await new User({
+    //   ...req.body,
+    //   image,
+    // }).save();
+    // return res.send({ images });
+
+    //multi
+    req.files.forEach(function (item) {
+      imagess.push({
+        originalname: item.originalname,
+        filename: item.filename,
+      });
+    });
     const images = await new User({
       ...req.body,
-      image,
+      password,
+      image: imagess,
     }).save();
     return res.send({ images });
   } catch (error) {
@@ -28,16 +46,31 @@ userImage.post("/", upload.single("image"), async function (req, res) {
 
 userImage.put(
   "/:userImageid",
-  upload.single("image"),
+  upload.array("image", 3),
   async function (req, res) {
     try {
       const { userImageid } = req.params;
-      const { username, useremail, password, role } = req.body;
-      const { originalname, filename } = req.file;
-      const image = [{ originalname, filename }];
+      const { username } = req.body;
+      //single
+      // const { originalname, filename } = req.file;
+      // const image = [{ originalname, filename }];
+      // const update = await User.findOneAndUpdate(
+      //   { _id: userImageid },
+      //   { username, image },
+      //   { new: true }
+      // );
+
+      //multi
+      const imagess = [];
+      req.files.forEach(function (item) {
+        imagess.push({
+          originalname: item.originalname,
+          filename: item.filename,
+        });
+      });
       const update = await User.findOneAndUpdate(
         { _id: userImageid },
-        { username, image },
+        { username, image: imagess },
         { new: true }
       );
       return res.send({ update });
