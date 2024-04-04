@@ -31,13 +31,14 @@ function onGetCity(res) {
     params.lat = item.lat;
     params.lon = item.lon;
     params.id = item.id;
-    // console.log(params);
+    console.log(params.lat);
     axios.get(weatherApi, { params }).then(onCreateMaker);
   });
 }
 
 function onCreateMaker(res) {
   //   console.log(res.data);
+  console.log(res.data.coord.lat);
   cityCnt++;
   let city = cities.filter(function (v) {
     // console.log(v.id === res.data.id);

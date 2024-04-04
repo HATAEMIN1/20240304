@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .slideImg {
+        background: pink;
+        height: 400px;
+        /* display: flex;
+        justify-content: center;
+        align-items: center; */
+      }
+
+      .slideImg img {
+        /* width: 100%; */
+        height: 100%;
+        display: block;
+        /* object-fit: cover; */
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+      }
+      .textWrap {
+        position: relative;
+        width: 1200px;
+        margin: 0 auto;
+        /* background: skyblue; */
+        height: 100%;
+        display: flex;
+        align-items: center;
+      }
+      .textBody {
+        background: white;
+        padding: 20px;
+      }
+      .textWrap.right {
+        justify-content: end;
+        text-align: right;
+      }
+      .wrap {
+        height: 400px;
+        overflow: hidden;
+      }
+      @media screen and (max-width: 1200px) {
+        .textWrap {
+          width: 100%;
+          justify-content: center !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
+    <div class="wrap">
+      <swiper-container class="slideWrap">
+        <swiper-slide class="slideImg bgimg01"
+          ><img src="./images (1)/img1.jpg" alt="" />
+          <div class="textWrap right">
+            <!--1200-->
+            <div class="textBody">
+              <h3>Lorem ipsum dolor sit amet.</h3>
+              <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                Maiores, placeat?
+              </p>
+            </div>
+          </div>
+        </swiper-slide>
+        <swiper-slide class="slideImg bgimg01"
+          ><img src="./images (1)/img2.jpg" alt="" />
+          <div class="textWrap">
+            <!--1200-->
+            <div class="textBody">
+              <h3>Lorem ipsum dolor sit amet.</h3>
+              <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                Maiores, placeat?
+              </p>
+            </div>
+          </div>
+        </swiper-slide>
+        <swiper-slide class="slideImg bgimg01"
+          ><img src="./images (1)/img3.jpg" alt="" />
+          <div class="textWrap">
+            <!--1200-->
+            <div class="textBody">
+              <h3>Lorem ipsum dolor sit amet.</h3>
+              <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                Maiores, placeat?
+              </p>
+            </div>
+          </div>
+        </swiper-slide>
+        <swiper-slide class="slideImg bgimg01"
+          ><img src="./images (1)/img4.jpg" alt="" />
+          <div class="textWrap">
+            <!--1200-->
+            <div class="textBody">
+              <h3>Lorem ipsum dolor sit amet.</h3>
+              <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                Maiores, placeat?
+              </p>
+            </div>
+          </div>
+        </swiper-slide>
+        <swiper-slide class="slideImg bgimg01"
+          ><img src="./images (1)/img5.jpg" alt="" />
+          <div class="textWrap">
+            <!--1200-->
+            <div class="textBody">
+              <h3>Lorem ipsum dolor sit amet.</h3>
+              <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                Maiores, placeat?
+              </p>
+            </div>
+          </div>
+        </swiper-slide>
+        <swiper-slide class="slideImg bgimg01"
+          ><img src="./images (1)/img6.jpg" alt="" />
+          <div class="textWrap">
+            <!--1200-->
+            <div class="textBody">
+              <h3>Lorem ipsum dolor sit amet.</h3>
+              <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                Maiores, placeat?
+              </p>
+            </div>
+          </div>
+        </swiper-slide>
+      </swiper-container>
+    </div>
+    <div class="container" style="height: 400px; background: red"></div>
+  </body>
+</html>
