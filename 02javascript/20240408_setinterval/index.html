@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    .box {
+      transition: 1s;
+      width: 100px;
+      height: 100px;
+      background-color: pink;
+      opacity: 1;
+    }
+    .box.view {
+      opacity: 0;
+      height: 0;
+    }
+  </style>
+  <body>
+    <div class="box"></div>
+    <button onclick="stopBtn()">멈춤</button>
+    <button onclick="startBtn()">시작</button>
+    <script>
+      let move = 2;
+      let step = 2;
+      let timeId;
+      let doubleClick = true;
+      setTimeout(function () {
+        document.querySelector(".box").classList.add("view");
+        console.log("view생성");
+      }, 5000);
+
+      function startBtn() {
+        if (doubleClick == true) {
+          timeId = setInterval(function () {
+            move = move + step; //move = move+move
+            console.log(move);
+          }, 1000);
+          doubleClick = false;
+        }
+      }
+
+      function stopBtn() {
+        // alert("test");
+        clearInterval(timeId);
+        doubleClick = true;
+        console.log("move stop!!!!");
+      }
+    </script>
+  </body>
+</html>

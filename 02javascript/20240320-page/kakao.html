@@ -107,7 +107,7 @@
       }
 
       function setPager(totalRecord) {
-        let pagerCnt = 5;
+        let pagerCnt = 7;
         let totalPage = Math.ceil(totalRecord / size);
         if (totalPage > 50) {
           totalPage = 50;
@@ -117,7 +117,7 @@
         let endPage = startPage + pagerCnt - 1;
 
         let textNum = "";
-
+        //이전페이지
         if (startPage == 1) {
           textNum += ` <li class="page-item disabled">
             <span class="page-link"><i class="fa-solid fa-arrow-left"></i></span>
@@ -129,12 +129,13 @@
             <span class="page-link"><i class="fa-solid fa-arrow-left"></i></span>
           </li>`;
         }
-
+        //페이지갯수
         for (let i = startPage; i <= endPage; i++) {
           textNum += `<li class="page-item ${
             page == i ? "active" : ""
           }" onclick='onPageClick(${i})'><span  class="page-link" href="#">${i}</span></li>`;
         }
+        //다음페이지
         if (endPage == totalPage) {
           textNum += ` <li class="page-item disabled">
             <span class="page-link" href="#"

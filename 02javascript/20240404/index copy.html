@@ -41,7 +41,6 @@
         right: 10px;
         bottom: 10px;
         cursor: pointer;
-        display: none;
       }
       .top a {
         height: 100%;
@@ -223,15 +222,22 @@
           console.log("작음");
           $(".wrap").removeClass("fixed");
         }
-        if ($("body").height() / 2 < scrollY) {
-          $(".top").fadeIn();
+        // if ($("body").height() / 2 < scrollY) {
+        //   $(".top").fadeIn();
+        // } else {
+        //   $(".top").fadeOut();
+        // }
+        if (false) {
+          $(".top>a").click(function (e) {
+            e.preventDefault();
+            $("html,body").animate({ scrollTop: $(document).height() }, 1000);
+          });
         } else {
-          $(".top").fadeOut();
+          $(".top>a").click(function (e) {
+            e.preventDefault();
+            $("html,body").animate({ scrollTop: 0 }, 1000);
+          });
         }
-      });
-      $(".top>a").click(function (e) {
-        e.preventDefault();
-        $("html,body").animate({ scrollTop: 0 }, 1000);
       });
     </script>
   </body>
