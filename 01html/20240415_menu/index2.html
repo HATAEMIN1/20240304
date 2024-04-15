@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    ul,
+    li {
+      list-style: none;
+    }
+    a:link,
+    a:visited {
+      text-decoration: none;
+      color: #333;
+    }
+    .nav {
+      width: 1200px;
+      margin: 0 auto;
+      background-color: skyblue;
+    }
+    .nav > ul {
+      display: flex;
+      position: relative;
+      z-index: 1;
+    }
+    .nav > ul > li {
+      flex-grow: 1;
+      transition: 0.3s;
+      position: relative;
+    }
+    .nav > ul > li:hover {
+      flex-grow: 2;
+      background: blue;
+    }
+    .nav > ul > li:hover > a {
+      color: red;
+    }
+    .nav > ul > li > a {
+      display: flex;
+      height: 50px;
+      width: 100%;
+      justify-content: center;
+      align-items: center;
+    }
+    .nav > ul:hover > li .submenu {
+      visibility: visible;
+      transform: translateY(0);
+    }
+    .submenu {
+      visibility: hidden;
+      background: green;
+      position: absolute;
+      width: 100%;
+      transform: translateY(0px);
+    }
+    .nav .bg {
+      background: green;
+      position: absolute;
+      width: 100%;
+      left: 0;
+    }
+    .nav:hover .bg {
+      height: 86.4px;
+    }
+  </style>
+  <body>
+    <div class="navWrap">
+      <div class="nav">
+        <ul>
+          <li>
+            <a href="#">menu1</a>
+            <div class="submenu">
+              <ul>
+                <li><a href="#">sub01_01</a></li>
+                <li><a href="#">sub01_02</a></li>
+                <li><a href="#">sub01_03</a></li>
+                <li><a href="#">sub01_04</a></li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <a href="#">menu2</a>
+            <div class="submenu">
+              <ul>
+                <li><a href="#">sub01_01</a></li>
+                <li><a href="#">sub01_02</a></li>
+                <li><a href="#">sub01_03</a></li>
+                <li><a href="#">sub01_04</a></li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <a href="#">menu3</a>
+            <div class="submenu">
+              <ul>
+                <li><a href="#">sub01_01</a></li>
+                <li><a href="#">sub01_02</a></li>
+                <li><a href="#">sub01_03</a></li>
+                <li><a href="#">sub01_04</a></li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <a href="#">menu4</a>
+            <div class="submenu">
+              <ul>
+                <li><a href="#">sub01_01</a></li>
+                <li><a href="#">sub01_02</a></li>
+                <li><a href="#">sub01_03</a></li>
+                <li><a href="#">sub01_04</a></li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <a href="#">menu5</a>
+            <div class="submenu">
+              <ul>
+                <li><a href="#">sub01_01</a></li>
+                <li><a href="#">sub01_02</a></li>
+                <li><a href="#">sub01_03</a></li>
+                <li><a href="#">sub01_04</a></li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+        <div class="bg"></div>
+      </div>
+    </div>
+    <div class="visual" style="background-color: pink; height: 300px"></div>
+  </body>
+</html>
